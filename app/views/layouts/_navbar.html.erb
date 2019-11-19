@@ -1,0 +1,25 @@
+<nav class="#e53935 red darken-1">
+    <div class="nav-wrapper">
+    <%= link_to "Exercise", workouts_path, class: "brand-logo" %>
+      <a href="#" class="brand-logo">Exercise Time</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <% if current_user %>
+       <li>
+      <%= link_to "Workouts", workouts_path %>
+        </li>
+      
+      <li>
+      <%= link_to "Log out", destroy_user_session_path, method_delete: :delete %>
+        </li>
+       <% else %>
+       <li>
+       <%= link_to "Login", user_session_path %>
+       </li>
+       <li>
+       <%= link_to "Register", new_user_registration_path %>
+       </li>
+
+       <% end %>
+      </ul>
+    </div>
+  </nav>

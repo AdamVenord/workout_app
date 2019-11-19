@@ -1,0 +1,11 @@
+<h2>Welcome <%= current_user.first_name %></h2>
+<hr />
+<%= link_to "Add Workout", new_workout_path %>
+<h5>Your Workouts</h5>
+<ul>
+  <% @workouts.each do |workout| %>
+    <li>
+      <%= workout.name %> - Time In Seconds <%= workout.time %> 
+    </li>
+  <% end %>
+</ul>
